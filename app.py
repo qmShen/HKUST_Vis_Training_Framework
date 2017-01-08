@@ -7,11 +7,6 @@ app = Flask(__name__, static_url_path='')
 def index():
     return app.send_static_file('index.html')
 
-
-@app.route('/dynamic')
-def dynamic():
-    return render_template('index.html')
-
 @app.route('/getGraph')
 def getGraph():
     with open('data/graph.json') as data_file:

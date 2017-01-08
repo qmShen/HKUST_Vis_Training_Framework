@@ -9,7 +9,6 @@ var navbar = new Vue({
 		buttons:[
             {'name': 'Button', 'link': "http://www.huamin.org/"},
             {'name': 'AnotherButton', 'link': "http://www.huamin.org/"}
-
         ],
 	}
 })
