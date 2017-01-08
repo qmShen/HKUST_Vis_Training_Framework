@@ -41,7 +41,9 @@ var left_view = new Vue({
             return d3.select(this.$el).select('section')[0][0].clientWidth;
         },
         height: function(){
-            return d3.select(this.$el).select('section')[0][0].clientWidth;
+            var width = d3.select(this.$el).select('section')[0][0].clientWidth;
+            var height = window.innerHeight - 100;
+            return width < height? width: height ;
         }
     },
     created: function(){

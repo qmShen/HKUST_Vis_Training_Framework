@@ -65,14 +65,19 @@
                 </div>
             </section>
         </div>
-        <div id="left-view"  class="col-sm-2 col-md-5 sidebar">
+        <div id="left-view"  class="col-md-4 sidebar">
             <section>
             </section>
 
         </div>
-        <div id="right-view" class="col-sm-2 col-md-5 sidebar">
-            <section style="background: blue">
-                right
+        <div id="right-view" class="col-md-4 sidebar" >
+            <section v-bind:style="styleObject">
+                <table border="1">
+                    <thead>
+                    <tr><th>ISBN</th><th>Title</th></tr>
+                    </thead>
+                    <tr is="node-element"  v-for="node in nodes" v-bind:item="node"> </tr>
+                </table>
             </section>
         </div>
     </div>
@@ -80,22 +85,28 @@
 
 </div>
 
+
+
+
 <script src="https://d3js.org/d3.v3.js"></script>
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 <script src="js/vue2.js"></script>
 <script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
+<script src="https://unpkg.com/vuex@2.1.1"></script>
 
 <script src="js/marked.min.js"></script>
 <script src="js/lib/NodeLink.js"></script>
 
-
+<script src="js/service/vuex/store.js"></script>
 <script src="js/service/pipService.js"></script>
 <script src="js/service/dataService.js"></script>
 
 <script src="js/vue-model/navbar.js"></script>
 <script src="js/vue-model/control-view.js"></script>
 <script src="js/vue-model/left.js"></script>
+<script src="js/vue-model/right.js"></script>
+
 </body>
 </html>
