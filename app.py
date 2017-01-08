@@ -13,7 +13,7 @@ def dynamic():
     return render_template('index.html')
 
 @app.route('/getGraph')
-def test():
+def getGraph():
     with open('data/graph.json') as data_file:
         data = json.load(data_file)
         print data
