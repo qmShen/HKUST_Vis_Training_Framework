@@ -8,7 +8,6 @@
 </head>
 
 <body>
-
 <nav id="body-navbar" class="navbar navbar-inverse navbar-static-top">
     <!-- container to make the display of navbar to be centered -->
     <div class="container">
@@ -19,10 +18,6 @@
         <!--Navbar right or left -->
         <div class="navbar-collapse collapse navbar-right" >
             <ul class="nav navbar-nav">
-                <!-- The same as:
-                <li><a href="http://www.huamin.org/" target="_blank" >Dump</a></li>
-                <li><a href="http://www.huamin.org/">Replace</a></li>
-                -->
                 <li v-for="item in buttons" >
                     <!-- must use v-bind to set assign value to the attributes-->
                     <a v-bind:href= "item.link">{{ item.name }}</a>
@@ -30,13 +25,13 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li><a href="#">Button</a></li>
+                        <li><a href="#">Button</a></li>
+                        <li><a href="#">Button</a></li>
                         <li class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li class="dropdown-header">Description</li>
+                        <li><a href="#">Button</a></li>
+                        <li><a href="#">Button</a></li>
                     </ul>
                 </li>
             </ul>
@@ -49,9 +44,9 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div id="control-view" class="col-sm-2 col-md-2 sidebar">
+        <div id="control-view" class="col-md-3 sidebar">
             <section class="box" style="background-color: #aaa;">
-                <h1>Feature Range</h1>
+                <h3>Features</h3>
                 <div id="control-view">
                     <div class="div-column">
                         <div v-for="feature in features">
@@ -60,33 +55,16 @@
                             <span>{{ feature.value }}</span>
                             <br>
                         </div>
-
                     </div>
                 </div>
             </section>
         </div>
-        <div id="left-view"  class="col-md-4 sidebar">
+        <div id="nodelink" class="col-md-9 sidebar">
             <section>
-            </section>
-
-        </div>
-        <div id="right-view" class="col-md-4 sidebar" >
-            <section v-bind:style="styleObject">
-                <table border="1">
-                    <thead>
-                    <tr><th>ISBN</th><th>Title</th></tr>
-                    </thead>
-                    <tr is="node-element"  v-for="node in nodes" v-bind:item="node"> </tr>
-                </table>
             </section>
         </div>
     </div>
-
-
 </div>
-
-
-
 
 <script src="https://d3js.org/d3.v3.js"></script>
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
@@ -94,19 +72,15 @@
 
 <script src="js/vue2.js"></script>
 <script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
-<script src="https://unpkg.com/vuex@2.1.1"></script>
 
-<script src="js/marked.min.js"></script>
 <script src="js/lib/NodeLink.js"></script>
 
-<script src="js/service/vuex/store.js"></script>
 <script src="js/service/pipService.js"></script>
 <script src="js/service/dataService.js"></script>
 
-<script src="js/vue-model/navbar.js"></script>
-<script src="js/vue-model/control-view.js"></script>
-<script src="js/vue-model/left.js"></script>
-<script src="js/vue-model/right.js"></script>
+<script src="js/model/navbar.js"></script>
+<script src="js/model/control-view.js"></script>
+<script src="js/model/nodelink-view.js"></script>
 
 </body>
 </html>
